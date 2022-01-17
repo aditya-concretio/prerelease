@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : avijay@fonteva.com
+  @group             : 
+  @last modified on  : 05-08-2021
+  @last modified by  : avijay@fonteva.com
+  Modifications Log 
+  Ver   Date         Author               Modification
+  1.0   05-08-2021   avijay@fonteva.com   Initial Version
+-->
+<template>
+    Something
+    <lightning-card title="List View" icon-name="custom:custom67">
+        <template if:true={listView.data}>
+            <div class="slds-var-m-around_medium">
+                <template for:each={records} for:item="record">
+                    <p key={record.fields.Id.value}>
+                        {record.fields.Name.value}
+                    </p>
+                </template>
+            </div>
+        </template>
+        <template if:true={listView.error}>
+            {listView.error}
+        </template>
+    </lightning-card>
+</template>
